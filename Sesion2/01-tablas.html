@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas</title>
+</head>
+<body>
+    <header>
+        <h1> Tablas en <code>HTML5</code> </h1>
+    </header>
+    <!-- ul => unorder list (lista desordenada), li => list item (item de la lista) que sirve para ir siempre dentro de un ul o un ol => order list (lista ordenada) -->
+    <!-- nav>h2{Menu Principal}+ul>li*2>a -->
+    <nav>
+        <h2>Menu Principal</h2>
+        <ul>
+            <li><a href="">Nosotros</a></li>
+            <li><a href="">Proyectos</a></li>
+        </ul>
+    </nav>
+    <!-- main => es la seccion principal de mi pagina web que me va a mostrar la parte mas importante de mi web -->
+    <main>
+        <section>
+            <!-- h3{Tabla 1}+article>h4{Lista de Frameworks} -->
+            <h3>Tabla 1</h3>
+            <article>
+                <h4>Lista de Frameworks</h4>
+                <table border="1">
+                    <thead>
+                        <!-- tr => table row o fila de la tabla -->
+                        <tr>
+                            <!-- th => columna de la cabecera -->
+                            <th>Numero</th>
+                            <th>Producto</th>
+                            <th>Duracion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- tr*5>td*3 -->
+                        <tr>
+                            <td>01</td>
+                            <td>Angular</td>
+                            <td>1mes</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>React</td>
+                            <td>2 meses</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Flask</td>
+                            <td>3 meses</td>
+                        </tr>
+                        <tr>
+                            <!-- rowspan sirve para combinar filas y colspan sirve para combinar columnas-->
+                            <td rowspan="2">04</td>
+                            <td>Django</td>
+                            <td>2 meses</td>
+                        </tr>
+                        <tr>
+                            <td>React Native</td>
+                            <td>2 meses</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>React Native</td>
+                            <td>2 meses</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">FIN CURSO</td>
+                            <td>FIN CURSO</td>
+                           
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

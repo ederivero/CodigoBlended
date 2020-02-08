@@ -1,0 +1,15 @@
+/* selector por etiqueta */
+h1{
+    color:blue;
+    background-color: peru;
+}
+#principal{
+    color:green;
+    font-weight: bold;
+}
+p{
+    text-decoration: underline;
+}
+.recomendado{
+    color:red;
+}

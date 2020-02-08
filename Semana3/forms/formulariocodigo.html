@@ -61,7 +61,119 @@
                         />
                         <br/>
                     </fieldset>
-                    
+                    <fieldset>
+                      <legend>Datos Adicionales</legend>
+                      <label for="edad">
+                        Edad:
+                      </label>
+                      <input 
+                      type="number" 
+                      id="edad" 
+                      placeholder="Ingresa tu edad"
+                      />
+                      <br/>
+                      <label for="fijo">
+                        Teléfono Fijo
+                      </label>
+                      <input 
+                      type="tel" 
+                      placeholder="Ej.: 054-674564"
+                      id="fijo"
+                      />
+                      <label for="celular">
+                        Teléfono Móvil
+                      </label>
+                      <input
+                      type="number"
+                      placeholder="Ej.: 956706789"
+                      id="celular"
+                      />
+                      <br/>
+                      <label>
+                        Género
+                      </label>
+                      <br/>
+                      <input type="radio" name="genero" value="M"> Hombre<br/>
+                      <input type="radio" name="genero" value="F"> 
+                      Mujer<br/>
+                      <input type="radio" name="genero" value="O"> 
+                      Otro<br/>
+                      <label>
+                        Vivienda
+                      </label>
+                      <br/>
+                      <input type="radio" name="vivienda" value="C">
+                      Casa<br/>
+                      <input type="radio" name="vivienda" value="A">
+                      Apartamento<br/>
+                      <label for="direccion">Dirección:</label>
+                      <input 
+                      type="text" 
+                      id="direccion" 
+                      placeholder="Ingrese su dirección"
+                      value="S/N"
+                      disabled
+                      />
+                      <br/>
+                      <label for="nacimiento">
+                        Fecha de Nacimiento:
+                      </label>
+                      <input type="date" id="nacimiento">
+                      <br/>
+                      <label for="estadocivil">
+                        Estado Civil
+                      </label>
+                      <select id="estadocivil">
+                        <option value="" selected disabled>Elija una opción...</option>
+                        <option value="S">Soltero</option>
+                        <option value="C">Casado</option>
+                        <option value="ES">Es complicado</option>
+                        <option value="SE">Separado</option>
+                        <option value="D">Divorciado</option>
+                      </select>
+                      <br/>
+                      <label for="hora">Seleccione la hora de su entrevista</label>
+                      <input type="time" id="hora">
+                      <br/>
+                      <label for="url">Ingrese su página personal (Opcional)</label>
+                      <input type="url" id="url">
+                      <br/>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Datos para evaluación psicológica</legend>
+                      <label>
+                        Indique sus Hobbies:
+                      </label>
+                      <input type="checkbox" value="lectura" id="leer">
+                      <label for="leer">
+                        Leer Libros, Revistas, Comics
+                      </label>
+                      <input type="checkbox" value="autos" id="autos">
+                      <label for="autos">
+                        Autos y Mecánica
+                      </label>
+                      <input type="checkbox" value="videojuegos" id="games">
+                      <label for="games">
+                        Me gusta Dotear
+                      </label>
+                      <input type="checkbox" value="peliculas" id="cine">
+                      <label for="cine">
+                        Películas y Documentales
+                      </label>
+                      <input type="checkbox" value="futbol" id="futbol">
+                      <label for="futbol">
+                        Pichanga
+                      </label>
+                      <br/>
+                      <label>Elija su color favorito:</label>
+                      <input type="color">
+                    </fieldset>
+                    <fieldset>
+                      <legend>Comentarios:</legend>
+                      <textarea cols="40" rows="10" placeholder="Escriba aquí sus comentarios..."></textarea>
+                    </fieldset>
+                    <!-- <button type="submit">Enviar mis datos</button> -->
+                    <input type="submit" value="Enviar mis datos"/>
                 </form>
             </div>
         </section>

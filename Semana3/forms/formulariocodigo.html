@@ -31,6 +31,9 @@
                         type="text" 
                         placeholder="..Ingrese sus nombres"
                         id="nombres"
+                        
+                        required
+                        pattern="[A-Z a-z]{1,15}"
                         />
                         <br/>
                         <label for="apellidos">
@@ -40,6 +43,8 @@
                         type="text"
                         placeholder="Ingresa tus apellidos"
                         id="apellidos"
+                        pattern="[A-Z a-z]+"
+                        required
                         />
                         <br/>
                         <label for="email">
@@ -49,6 +54,8 @@
                         type="email"
                         placeholder="Ingresa tu correo..."
                         id="email"
+                        pattern="[A-Za-z0-9]{1,}@[A-Za-z0-9]{1,}.[A-Za-z]{2,]"
+                        required
                         />
                         <br/>
                         <label for="pass">
@@ -58,6 +65,7 @@
                         type="password"
                         placeholder="Ingresa una contraseña segura"
                         id="pass"
+                        required
                         />
                         <br/>
                     </fieldset>
@@ -70,6 +78,8 @@
                       type="number" 
                       id="edad" 
                       placeholder="Ingresa tu edad"
+                      min="14"
+                      max="65"
                       />
                       <br/>
                       <label for="fijo">
@@ -79,6 +89,7 @@
                       type="tel" 
                       placeholder="Ej.: 054-674564"
                       id="fijo"
+                      pattern="[0-9]{2,3}-[0-9]{6,}"
                       />
                       <label for="celular">
                         Teléfono Móvil
@@ -118,7 +129,11 @@
                       <label for="nacimiento">
                         Fecha de Nacimiento:
                       </label>
-                      <input type="date" id="nacimiento">
+                      <input 
+                      type="date" 
+                      id="nacimiento" 
+                      min="1950-01-01"
+                      max="2008-12-31">
                       <br/>
                       <label for="estadocivil">
                         Estado Civil
@@ -138,6 +153,12 @@
                       <label for="url">Ingrese su página personal (Opcional)</label>
                       <input type="url" id="url">
                       <br/>
+                      <label for="rango">
+                        Como considera su nivel previo
+                      </label>
+                      <span>min: 0</span>
+                      <input type="range" id="rango" min="0" max="10" step="2">
+                      <span>max: 10</span>
                     </fieldset>
                     <fieldset>
                       <legend>Datos para evaluación psicológica</legend>

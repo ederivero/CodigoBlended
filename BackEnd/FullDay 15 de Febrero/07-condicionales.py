@@ -55,23 +55,59 @@ for letra in texto:
 # for i in range(100,10,-1):
 #     print(i)
 
-for x in range(0,10):
-    print(x)
+# for x in range(0,10):
+#     print(x)
 
 tareas= ['Matematica', 'Biologia', 'Comunicacion','Musica']
-for tarea in tareas:
-    print(tarea)
+# for tarea in tareas:
+#     print(tarea)
 
-print(ord("a"))
-primera_letra=input("Ingrese una letra: ")
-ultima_letra= input("Ingrese otra letra: ")
-for letra in range(ord(primera_letra),ord(ultima_letra)):
-    print(chr(letra))
+# print(ord("a"))
+# primera_letra=input("Ingrese una letra: ")
+# ultima_letra= input("Ingrese otra letra: ")
+# for letra in range(ord(primera_letra),ord(ultima_letra)):
+#     print(chr(letra))
 
 # Se desea ingresar un numero inicial y un numero final y ver cuantos numeros son pares y cuantos impares
 # 20 - 28
 # 3 pares y 4 impares
-inicio = int(input("Ingrese el inicio: "))
-limite = int(input("Ingrese el tope: "))
-pares = 0
-impares = 0
+# inicio = int(input("Ingrese el inicio: "))
+# limite = int(input("Ingrese el tope: "))
+# pares = 0
+# impares = 0
+# for numero in range(inicio,limite+1):
+#     if(numero % 2==0):
+#         pares += 1
+#     else:
+#         impares += 1
+# print("Hay {} numeros pares y {} numeros impares".format(pares,impares))
+
+# break => para parar el ciclo principal, ahi muere
+# for numero in range(0,100):
+#     if (numero==25):
+#         print("chau")
+#         break
+#     if (numero==10):
+#         print("es el diez")
+#     print(numero)
+
+# continue => para parar solamente esa iteracion
+# for numero in range(0,20):
+#     if (numero==10):
+#         continue
+#     print(numero)
+
+# while => mientras que una condicion sea cierta, siempre se va a repetir 
+valor_inicial=1
+valor_final=10
+while(valor_inicial<valor_final):
+    print(valor_inicial)
+    # en el while siempre tenemos que tener una forma de parar sino se generara un bucle infinito
+    valor_inicial+=1
+
+# en python no existe el do-while => hacer mientras que
+# pass => no hace nada pero como en python no existe las llaves y todo se maneja por bloques de identacion la unica forma de dejar un if, else, while, for o funciones vacias es declarando la palabra reservada pass
+for i in range(0,200):
+    pass
+print("Eso es todo por las condicionales")
+# NOTA: El switch case no existe en python, en su lugar se usa mayormente el if con elif, el elif no existe en JavaScript

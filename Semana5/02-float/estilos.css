@@ -50,7 +50,7 @@
 }
 main{
     width:96%;
-    padding:0 2%;
+    padding:10px 2%;
     background-image: linear-gradient(0deg,#943DFF,rgb(49, 9, 97));
 }
 main>div{
@@ -76,9 +76,21 @@ main>div{
     color:#333333;
     margin-bottom:10px;
 }
+#infoadicional p,label{
+    font-family:Arial, Helvetica, sans-serif;
+}
+#infoadicional textarea{
+    width:90%;
+    height:120px;
+}
 #infoadicional input{
     border:1px solid blue;
     border-radius:2px;
+    margin:5px 0;
+}
+#infoadicional input[type=text]{
+    height:20px;
+    width:90%;
 }
 #infoadicional input[type=submit]{
     padding:5px;
@@ -116,3 +128,83 @@ article time{
     text-align:center;
 }
 
+article h2{
+    margin-bottom:10px;
+    font:bold 30px 'Verdana','sans-serif';
+}
+
+article p{
+    font:18px 'Arial';
+}
+
+figure{
+    margin:10px;
+}
+
+figure img{
+    max-width:98%;
+    padding:5px;
+    border:1px solid blue;
+    border-radius:3px;
+}
+
+#pielogo{
+    width:96%;
+    padding:2%;
+    background-color:darkblue;
+}
+#pielogo>div{
+    max-width:960px;
+    margin:0 auto;
+    background-color:skyblue;
+    border-radius:10px;
+}
+
+.seccionpie{
+    float:left;
+    width:27.33%;
+    padding:3%;
+}
+.seccionpie h3{
+    font: bold 20px 'Arial','sans-serif';
+}
+
+.seccionpie p{
+    margin-top:5px;
+}
+
+.seccionpie a{
+    font: bold 16px 'Arial','sans-serif';
+    color:gray;
+    text-decoration: none;
+}
+
+#listamenu>li{
+    position:relative;
+    display:inline-block;
+    height:35px;
+    padding:15px 10px 0 10px;
+    margin-right:10px;
+}
+
+#listamenu li>ul{
+    display:none;
+    position: absolute;
+    top:50px;
+    background-color:skyblue;
+    box-shadow: 3px 3px 5px gray;
+    border-radius:0 0 5px 5px;
+    list-style:none;
+    z-index:100;
+}
+/* a los elementos li que pertenezcan a #listamenu cuando el mouse encima, pero vamos a afectar a los ul que esten dentro */
+#listamenu li:hover ul{
+    display:block;
+}
+
+#listamenu li>ul>li{
+    width:120px;
+    height:35px;
+    padding-top:15px;
+    padding-left:10px;
+}

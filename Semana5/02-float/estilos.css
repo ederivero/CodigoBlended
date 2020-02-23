@@ -48,13 +48,23 @@
     color:rgb(1, 3, 77);
     text-decoration: none;
 }
+#menuicono{
+    display:none;
+    width:95%;
+    height:50px;
+    padding: 5px 2% 0 3%;
+    text-align:center;
+    background-color:#3DD2FF;
+    border-top:1px solid #943DFF;
+    border-bottom:1px solid #943DFF;
+}
 main{
     width:96%;
     padding:10px 2%;
     background-image: linear-gradient(0deg,#943DFF,rgb(49, 9, 97));
 }
 main>div{
-    width:960px;
+    max-width:960px;
     margin:0 auto;
 }
 #articulosprincipales{
@@ -207,4 +217,76 @@ figure img{
     height:35px;
     padding-top:15px;
     padding-left:10px;
+}
+
+/* INICIO DE MEDIAQUERIES */
+
+@media(max-width:1170px){
+    #cabeceralogo>div{
+        max-width:720px;
+    }
+    #cabeceralogo h1{
+        text-align: center;
+    }
+    article time{
+        /* static va posicionar el elemento donde deberia estar según el html */
+        position:static;
+        width:100%;
+        padding:0%;
+        margin-bottom:10px;
+        background-color: white;
+        box-shadow:0 0 0;
+        border-radius:0;
+    }
+    .numerodia{
+        color:gray;
+        font:bold 14px 'Verdana','sans-serif';
+        display:inline-block;
+        margin-right:5px;
+    }
+    .nombredia{
+        color:gray;
+        font:bold 14px 'Verdana','sans-serif';
+        display:inline-block;
+    }
+    article{
+        /* flexbox */
+        display:flex;
+        /* cambiar la dirección de los elementos */
+        flex-direction:column;
+        /* justificar de forma horizontal, pero si la disposicion fuera flexdirecion:row */
+        justify-content:center;
+        /* utilizamos align items para cenrtrar de forma horizontal porque estamos utilizando flex-direction:column */
+        align-items:center;
+        
+    }
+    #articulosprincipales{
+        display:block;
+        width:100%;
+    }
+
+    #infoadicional{
+        display:block;
+        width:100%;
+        margin-top:10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    #infoadicional h2{
+        font-size:28px;
+    }
+    #infoadicional p, label{
+        font-size:21px;
+    }
+}
+
+@media(max-width:576px){
+    #menuprincipal{
+        display:none;
+        height:100%;
+        text-align:center;
+    }
+    #menuicono{
+        display:block;
+    }
 }

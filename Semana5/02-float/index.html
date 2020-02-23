@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css"/>
     <title>Document</title>
+    
 </head>
 <body>
     <header id="cabeceralogo">
@@ -13,7 +14,7 @@
         </div>
     </header>
     <nav id="menuicono">
-        <!-- Acá ira un iconito eventualmente2 -->
+        <img src="menu.png" width="45"/>
     </nav>
     <nav id="menuprincipal">
         <div>
@@ -121,5 +122,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        var visible = false;
+        // en una variable, obtengo el div con id menuicono
+        var menuicono = document.getElementById("menuicono");
+        //voy a configurar un "oyente"que escuche si alguien hace click en menuicono
+        menuicono.addEventListener("click", function(){
+            // en una variable, obtengo el div con id menuprincipal
+            var menuprincipal = document.getElementById("menuprincipal");
+            if(visible===false){
+                menuprincipal.style.display="block";
+                visible=true;
+            }else{
+                menuprincipal.style.display="none";
+                visible=false;
+            }
+        })
+    </script>
 </body>
 </html>

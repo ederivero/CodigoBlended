@@ -28,20 +28,17 @@ def traer_productos():
     conexion.execute(sentencia)
     # CAPTURAR LA DATA QUE NOS LLEGA COMO RESULTADO
     informacion = conexion.fetchall()
-    print(informacion)
-    return 'Procesando la informacion . . .'
-
-
-
-
-
-
-
-
-
-
-
-
+    data=[]
+    for producto in informacion:
+        productodic={
+            'id':producto[0],
+            'nombre':producto[1],
+            'id categoria': producto[2]
+        }
+        # print(productodic)
+        data.append(productodic)
+    conexion.close()
+    return jsonify(data)
 
 if __name__ =="__main__":
     # significa que se va a ejecutar siempre y cuando estemos en nuestra ventana principal del proyecto

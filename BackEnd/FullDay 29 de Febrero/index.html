@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Este es el front</p>
+    <h2>Este es la lista de productos</h2>
+    <ul id="lista-productos">
+
+    </ul>
+    <script>
+        fetch('http://localhost:5000/productos').then(productos=>{
+            return productos.json();
+        })
+        .then(rpta=>{
+            // console.log(rpta);
+            let lista=document.getElementById('lista-productos')
+            rpta.forEach(elemento => {
+                console.log(elemento);
+                lista.innerHTML+="<li>"+elemento.nombre+" </li>"
+            });
+        }).catch(error=>{
+            console.error(error)
+        })
+    </script>
+</body>
+</html>

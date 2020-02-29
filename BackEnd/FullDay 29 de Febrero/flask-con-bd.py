@@ -4,11 +4,19 @@ from flask import Flask, jsonify, request
 # pip install mysqlclient
 # pip install flask_mysqldb
 from flask_mysqldb import MySQL
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 # CREDENCIALES PARA CONECTARME CON LA BD
-app.config['MYSQL_HOST']="127.0.0.1"
+# app.config['MYSQL_HOST']="remotemysql.com"
+app.config['MYSQL_HOST']="localhost"
+# 192.168.1.25
+# app.config['MYSQL_USER']="4wMUUtAQ8j"
 app.config['MYSQL_USER']="root"
+# app.config['MYSQL_PASSWORD']="l7bfYNhXnE"
 app.config['MYSQL_PASSWORD']="root"
+# app.config['MYSQL_DB']="4wMUUtAQ8j"
 app.config['MYSQL_DB']="codigoblended"
 # CREAR VINCULO CON LA BASE DE DATOS DESDE MI API
 conexionMYSQL = MySQL(app=app)
@@ -38,7 +46,53 @@ def traer_productos():
         # print(productodic)
         data.append(productodic)
     conexion.close()
+    # automaticamente me va a convertir un diccionario en un JSON
     return jsonify(data)
+
+@app.route('/producto/agregar', methods=['POST'])
+def agregar_producto():
+    # hay dos metodos de pasar informacion al back => BODY, PARAMS
+    # Este metodo automaticamente transforma el JSON en un diccionario
+    contenido = request.get_json()
+    print(contenido)
+    conexion = conexionMYSQL.connection.cursor()
+    conexion.execute("INSERT INTO t_producto (prod_nom, cat_id) VALUES(%s,%s)",(contenido['nombre'], contenido['categoria']))
+    # El metodo commit sirve para guardar todos los cambios efectuados en la base de datos.
+    # Se usa mucho para el manejo de TRANSACCIONES (TRANSACT-SQL)
+    conexionMYSQL.connection.commit()
+    conexion.close()
+    return jsonify({
+        'message':'Se registro el producto exitosamente',
+        'contenido':contenido
+    }),201
+
+
+@app.route('/categoria/<string:palabra>', methods=['GET'])
+def devolver_categoria(palabra):
+    conexion = conexionMYSQL.connection.cursor()
+    conexion.execute(f"SELECT * from t_categoria where cat_nom ='{palabra}'")
+    data = conexion.fetchone()
+    # fetchall => retornar una lista de resultados, entonces tendria que iterarla
+    # fetchone => retornar la primera coincidencia
+    conexion.close()
+    if data:
+        return jsonify({
+            'message':'ok',
+            'data':{
+                'id':data[0],
+                'nombre':data[1]
+            }
+        })
+    else:
+        return 'No existe esa categoria'
+
+# Generar rutas para:
+# Ruta para Ingresar una persona (7min)
+# Ruta para Mostrar la lista de productos de esa persona (use el JOIN) enviada por la url (nombre de la persona) (20min)
+# Ruta para Traer la lista de todas las personas mujeres (6min)
+# Ruta para Traer la lista de todos los productos de una categoria enviada por el url (JOIN) (6min)
+# Ruta para Ingresar una relacion de una persona con el producto y su cantidad (5min)
+
 
 if __name__ =="__main__":
     # significa que se va a ejecutar siempre y cuando estemos en nuestra ventana principal del proyecto

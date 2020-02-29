@@ -5,6 +5,7 @@ from flask import Flask, jsonify, request
 # pip install flask_mysqldb
 from flask_mysqldb import MySQL
 from flask_cors import CORS
+# pip install flask-cors
 
 app = Flask(__name__)
 CORS(app)

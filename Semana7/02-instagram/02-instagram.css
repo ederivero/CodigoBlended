@@ -18,4 +18,26 @@
     width:100%;
     vertical-align: top;
 }
-
+.post-overlay{
+    /* red,greeb,blue,transparencia 0 a 1 */
+    background-color:rgba(0,0,0,0.4);
+    position:absolute;
+    left:0;
+    top:0;
+    display:none;
+    /* flexbox */
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+    width:100%;
+    height:100%;
+}
+.post:hover .post-overlay{
+    display:flex;
+}
+.likes, .comments{
+    margin:5px;
+    font-weight:bold;
+    font-family: 'Raleway', sans-serif;
+}

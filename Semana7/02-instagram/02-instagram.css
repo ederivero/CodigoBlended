@@ -8,6 +8,7 @@
     grid-template-columns: repeat(3,minmax(250px,300px));
     grid-gap:28px;
     border:1px solid gray;
+    justify-content: center;
 }
 .post{
     position:relative;
@@ -41,3 +42,41 @@
     font-weight:bold;
     font-family: 'Raleway', sans-serif;
 }
+/* Estilos Nav */
+nav{
+    display:grid;
+    grid-template-columns: repeat(3,200px);
+    justify-content: space-evenly;
+    align-content: center;
+    height:50px;
+}
+.logo{
+    font-family: 'Lobster',sans-serif;
+    font-size:24px;
+}
+.search input{
+    height:25px;
+    font-family:Arial;
+    
+}
+#iniciar{
+    height:25px;
+    font-family:Arial,sans-serif;
+    color:white;
+    background-color:steelblue;
+    border-radius:5px;
+    padding:5px;
+}
+#registrarse{
+    height:25px;
+    background-color:transparent;
+    outline:none;
+    border:none;
+}
+
+@media screen and (max-width:768px){
+    .post-list{
+        grid-gap:3px;
+    }
+}
+

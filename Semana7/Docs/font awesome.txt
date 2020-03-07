@@ -1,0 +1,14 @@
+FONT AWESOME
+
+1 cdnjs.com
+
+2- buscamos font awesome
+
+3- elejimos en su pestañita de css, click!
+
+4. y elegimos:
+	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css
+
+4.1 dar click copy y elegir "copy link tag"
+
+

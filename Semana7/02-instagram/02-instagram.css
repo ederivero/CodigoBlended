@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.post-list{
+    display:grid;
+    grid-template-columns: repeat(3,minmax(250px,300px));
+    grid-gap:28px;
+    border:1px solid gray;
+}
+.post{
+    position:relative;
+    display:block;
+    cursor: pointer;
+}
+.post-image img{
+    width:100%;
+    vertical-align: top;
+}
+

@@ -1,0 +1,130 @@
+*{
+    /* RESETEADO */
+    margin:0;
+    padding:0;
+    /* !!! ajustar borde y padding al tamaño que yo indique en mis elementos */
+    box-sizing: border-box;
+}
+body{
+    background-image:linear-gradient(90deg, black, #333333);
+}
+
+.container{
+   width:900px;
+   height:1000px;
+   /* margin: 10px 20px; */
+   margin:0 auto;
+   display:grid;
+   /* grid-template: filas / columnas */
+   grid-template: 600px 1fr 1fr / 30% 30% 1fr 1fr;
+   /* espaciado entre mis elementos */
+   /* grid-gap les va a funcionar solamente como gap en algunos navegadores */
+   /* grid-gap: 10px 20px - X Y*/
+   grid-gap:10px;
+   /* ------- */
+    /* padding:20px;
+    border:5px solid steelblue; */
+}
+
+.item{
+    background-color:lightgray;
+    /* border:1px solid salmon; */
+}
+.navprincipal{
+    display:grid;
+    width:100%;
+    height:50px;
+    /* border:1px solid orangered; */
+    grid-template-columns: 0.2fr 0.6fr 0.2fr;
+    padding:10px;
+    grid-gap:10px;
+}
+/* .navprincipal *{
+    border:1px solid gray;
+} */
+.logo{
+    font-family: 'Lobster', cursive;
+    font-size:20px;
+    text-align:center;
+}
+.links ul{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.links li{
+    list-style-type: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.slogan{
+    font-family: 'Lobster', cursive;
+    font-size:36px;
+    text-shadow: 5px 5px 5px black;
+    /* chrome -webkit
+        mozilla -moz 
+        opera -o 
+        ie -ms*/
+    /* -webkit-text-stroke:1px gray; */
+    /* self: propio -> solamente a un elemento*/
+    justify-self: center;
+}
+.caja1{
+    grid-column:1 / 5;
+    display:grid;
+    /* justify-content:center */
+    background-image: url('./assets/grill.jfif');
+    background-size: cover;
+    background-position: center;
+    color:white;
+    border-bottom: 20px solid darkred;
+}
+.caja2{
+    /* grid-column: 1 / 2; */
+    grid-row:2 / 4;
+    background-image:url('https://picsum.photos/400/400');
+    background-size: cover;
+    background-position: center;
+}
+.caja3{
+    grid-column:2 / 3;
+    grid-row: 2 / 4;
+    background-image:url('https://picsum.photos/400/400');
+    background-size: cover;
+    background-position: center;
+}
+.caja4{
+    grid-column:3 / 5;
+    grid-row: 2 / 3;
+    background-image:url('./assets/postre.jfif');
+    /* esta intentando cubrir el contener de mi imagen totalmente, respecto a su tamaño */
+    background-size: cover;
+    /* me centra esa imagen */
+    background-position: center;
+}
+.caja5{
+    /* gradiente lineal
+    orientacion_en_deg , colores */
+    background-image:linear-gradient(315deg, salmon, rgb(124, 19, 36));
+    color:white;
+    text-shadow:3px 3px 4px black;
+    font-family: 'Spartan', sans-serif;
+    padding:10px;
+    display:grid;
+    /* justify-content self-> horizontal */
+    /* align-content self -> vertical*/
+    align-content:space-between;
+    /* justify-content: end; */
+    text-align:center;
+}
+.caja6{
+    background-image:linear-gradient(
+        315deg,rgb(0,0,1),rgb(26,105,143)
+    );
+    color:white;
+    text-shadow:3px 3px 4px black;
+    font-family: 'Spartan', sans-serif;
+    padding:10px;
+    display:grid;
+    align-content:space-between;
+    text-align:center;
+
+}

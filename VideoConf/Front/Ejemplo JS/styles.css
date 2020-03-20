@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html,body{
+    height:100%;
+}
+.mainheader{
+    height: 54px;
+    background-color:steelblue;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:28px;
+    padding:8px;
+    text-align:center;
+    box-shadow: 4px 4px 10px gray;
+}
+main{
+    height:calc(100% - 54px);
+}
+.container{
+    padding-top:10px;
+    max-width: 1200px;
+    min-width:600px;
+    display:grid;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+#buscar{
+    height:30px;
+    padding:5px;
+    border-radius: 10px;
+    outline:none;
+    margin:5px 0;
+    width:calc(100% - 100px);
+    display: inline-block;
+}
+#btnbuscar{
+    width:90px;
+    display: inline-block;
+
+}
+tr{
+    padding:10px;
+    text-align: center;
+}

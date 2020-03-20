@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>App</title>
+  </head>
+  <body>
+    <header class="mainheader">
+      <span>Mi App</span>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Lista de Productos</h1>
+        <input
+          type="text"
+          class="form-control"
+          id="buscar"
+          placeholder="Búsqueda..."
+        />
+        <button id="data">
+            Traer datos
+        </button>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Imagen</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </main>
+    <!-- Javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>

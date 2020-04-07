@@ -5,11 +5,11 @@ const devolverProductos = (req,res)=>{
         contenido:productos
     })
 }
-const agregarProductos = (req,res)=>{
+const agregarProductos = (req,res)=>{ // REQUEST => BODY (CUERPO) PARAM (PARAMETROS)
     console.log(req.body);
-    // let nombre = req.body.nombre;
+    let nombre = req.body.variable;
     // DESTRUCTURACION ES6
-    let {nombre} = req.body;
+    // let {nombre} = req.body;
     productos.push(nombre);
     res.status(201).json({
         ok:true,

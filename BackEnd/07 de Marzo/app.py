@@ -83,18 +83,55 @@ def traer_raza():
 # ruta para agregar una especie
 @app.route('/especie/agregar', methods=['POST'])
 def agregar_especie():
-    pass
+    contenido = request.get_json()
+    conexionMYSQL = conexion.connection.cursor()
+    conexionMYSQL.execute("INSERT INTO t_especie(esp_nom) VALUES('",contenido['nombre'],"')")
+    conexion.connection.commit()
+    conexionMYSQL.close()
+    return jsonify({
+        'mensaje':'Exito',
+        'contenido':'Se agrego exitosamente la especie'
+    })
 # ruta para agregar un tipo de usuario
 @app.route('/tusu/agregar', methods=['POST'])
 def agregar_tusu():
+    contenido = request.get_json()
+    conexionMYSQL = conexion.connection.cursor()
+    conexionMYSQL.execute("INSERT INTO t_usu(tusu_desc) VALUES ('",contenido['nombre'],"')")
+    conexion.connection.commit()
+    conexionMYSQL.close()
+    return jsonify({
+        'mensaje':'Exito',
+        'otra_llave':'otro_resultado'
+    }), 201
     pass
 # ruta para agregar un usuario
 @app.route('/usuario/agregar', methods=['POST'])
 def agregar_usuario():
-    pass
+    # antes de crear el usuario tengo que validar que el tipo de usuario ingresado sea un usuario que existe
+    contenido = request.get_json()
+    conexionMYSQL = conexion.connection.cursor()
+    conexionMYSQL.execute("SELECT * FROM t_usu WHERE tusu_id="contenido['tipo_usuario'])
+    tipos_usuario = conexionMYSQL.fetchone()
+    if tipos_usuario:
+        # valido que el tipo de usuario ingresado exista
+        conexionMYSQL.execute("INSERT INTO t_persona (per_nom, per_ape, per_est, per_dir, per_fono, per_dni, tusu_id VALUES('",contenido['nombre'],"','",contenido['apellido'],"','",contenido['estado'],"','",contenido['direccion'],"','",contenido['telefono'],"','",contenido['dni'],"',",contenido['tipo_usuario'])
+        conexion.connection.commit()
+        conexionMYSQL.close()
+        return jsonify({
+            'mensaje':'Exito',
+            'contenido':'Se agrego exitosamente el usuario'
+        }), 201
+    else:
+        conexionMYSQL.close()
+        return jsonify({
+            'mensaje':'Error',
+            'contenido':'El tipo de usuario no existe'
+        }), 403
 # ruta para agregar una mascota
 @app.route('/mascota/agregar', methods=['POST'])
 def agregar_mascota():
+    # Antes de ingresar la mascota se deberia hacer una validacion sobre la especie, raza y la persona para ver si existen, y posterior a ello recien almacenar dicha mascota
     pass
 
 # ESTO SIRVE PARA LEVANTAR EL SERVIDOR, SI ESTA CORRIENDO EL ARCHIVO PRINCIPAL SE VA A CUMPLIR LA CONDICION

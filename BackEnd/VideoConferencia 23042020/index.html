@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+
+
+    <script src="./index.js"></script>
+    
+    <title>Firebase Database</title>
+</head>
+<body>
+    <h3>La lista de productos son:</h3>
+    <table border="1" id="tablaProductos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+    </table>
+
+    <hr>
+    <label for="nomProd">Ingrese el nombre de producto</label>
+    <input type="text" id="nomProd"><br>
+    <label for="preProd">Ingrese el precio del producto</label>
+    <input type="number" id="preProd"><br>
+    <button id="btnAdd">Agregar nuevo producto</button>
+    
+</body>
+</html>

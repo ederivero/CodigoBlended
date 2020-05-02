@@ -9,6 +9,13 @@ export default class Header extends Component {
     };
   }
 
+  actualizarTitulo(e){
+    e.preventDefault();
+    this.setState({
+      titulo:"Codigo con React y Patatas"
+    })
+  }
+
   render() {
     return (
       <Fragment>
@@ -17,6 +24,7 @@ export default class Header extends Component {
           <small>más texto</small>
         </header>
         <nav>Links</nav>
+        <button className="btn btn-primary" onClick={(e)=>{this.actualizarTitulo(e)}}>Actualizar</button>
       </Fragment>
     );
   }

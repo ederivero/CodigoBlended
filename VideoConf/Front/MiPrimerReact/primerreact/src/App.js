@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header';
+import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 let titulo = "AppTitle";
@@ -9,10 +10,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header texto="Codigo" />
         <Header texto={titulo}/>
         {parrafo}
-        <button className="btn btn-primary">Click!!</button>
+        <hr/>
+        <Footer/>
       </div>
     )
   }

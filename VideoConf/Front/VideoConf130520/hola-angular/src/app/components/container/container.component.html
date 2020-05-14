@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>{{titulo}}</h2>
+    <input class="form-control" [(ngModel)]="titulo"/>
+    <p *ngIf="verdadero">
+        Hola soy el texto con ngIf
+    </p>
+    <button class="btn btn-primary" (click)="cambiar()">Cambiar</button>
+</div>

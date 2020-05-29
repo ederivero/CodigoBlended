@@ -18,3 +18,12 @@ export const createCategoria = async (req:Request, res:Response)=>{
         })
     }
 }
+
+export const getAllCategoria = (req:Request, res:Response)=>{
+    getRepository(Categoria).find().then((categorias:Categoria[])=>{
+        res.json({
+            ok:true,
+            content:categorias
+        })
+    })
+}

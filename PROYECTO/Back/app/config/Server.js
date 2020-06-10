@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const {conexion} = require('./Sequelize');
+const {ciudad_router} = require('../routes/Ciudad')
 
 class Server{
     constructor() {
@@ -27,11 +29,18 @@ class Server{
                 ok:true,
                 message:'La API FUNCIONA!'
             })
-        })
+        });
+        this.app.use('',ciudad_router)
     }
     iniciarServidor(){
         this.app.listen(this.puerto,()=>{
-            console.log('Servidor corriendo exitosamente en el puerto'+this.puerto);
+            console.log('Servidor corriendo exitosamente en el puertos '+this.puerto);
+            // force : true => obliga a borrar toda la base de datos y crearla nuevamente || false
+            // alter : true => valida los cambios de algun campo y lo sobreescribe || false
+            conexion.sync({force:true}).then(()=>{
+                console.log('Base de datos conectada exitosamente');
+                
+            })
         })
     }
 }

@@ -87,10 +87,12 @@ const actualizarCiudad = (req,res)=>{
             })
         }
     }).then(ciudadActualizada=>{
-        res.status(201).json({
-            ok: true,
-            contenido: ciudadActualizada
-        })
+        if(ciudadActualizada){
+            res.status(201).json({
+                ok: true,
+                contenido: ciudadActualizada
+            })
+        }
     }).catch(error=>{
         res.status(500).json({
             ok: false,
@@ -99,6 +101,7 @@ const actualizarCiudad = (req,res)=>{
     });
 }
 
+const eliminarCiudad = (req,res)=>{}
 module.exports = {
     traerCiudades,
     crearCiudad,

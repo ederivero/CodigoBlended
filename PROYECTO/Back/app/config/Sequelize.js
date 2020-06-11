@@ -18,7 +18,9 @@ const conexion = new Sequelize(
             dateStrings: true,
             typeCast: true
         },
-        timezone:'-05:00'
+        timezone:'-05:00',
+        // Para evitar que se muestre en la terminal todas las sentencias SQL se coloca le valor de false
+        logging: false
     }
 )
 // CREAR LOS MODELOS

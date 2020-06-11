@@ -101,9 +101,44 @@ const actualizarCiudad = (req,res)=>{
     });
 }
 
-const eliminarCiudad = (req,res)=>{}
+const eliminarCiudad = (req,res)=>{
+    let {id_ciudad} = req.params;
+    Ciudades.destroy({where:{ciu_id: id_ciudad}}).then(respuesta=>{
+        if(respuesta === 1){
+            res.status(200).json({
+                ok:true,
+                mensaje: 'Ciudad eliminada con exito'
+            })
+        }else{
+            res.status(404).json({
+                ok:true,
+                mensaje: 'No se encontro la ciudad'
+            })
+        }
+    })
+}
+
+const traerCiudadPorId = (req,res)=>{
+    let {id_ciudad} = req.params;
+    Ciudades.findByPk(id_ciudad).then(ciudadrespuesta=>{
+        if(ciudadrespuesta){
+            res.json({
+                ok: true,
+                mensaje: ciudadrespuesta
+            })
+        }else{
+            res.status(404).json({
+                ok: false,
+                mensaje: 'No se encontro la ciudad'
+            })
+        }
+    })
+}
+
 module.exports = {
     traerCiudades,
     crearCiudad,
-    actualizarCiudad
+    actualizarCiudad,
+    eliminarCiudad,
+    traerCiudadPorId
 }

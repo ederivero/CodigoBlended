@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const crypto = require('crypto');
 
 const usuario_model = (conexion)=>{
     const usuario = conexion.define('usuario',{
@@ -51,6 +52,17 @@ const usuario_model = (conexion)=>{
         tableName:'t_usuario',
         timestamps:true
     });
+
+    usuario.prototype.setearPassword = function (password) {
+        this.usu_salt = crypto.randomBytes(16).toString('hex');
+        this.usu_hash = crypto.pbkdf2Sync(password,this.usu_salt,1000,64,'sha512').toString('hex');
+    }
+
+
+
+
+
+
     return usuario;
 }
 module.exports= usuario_model;

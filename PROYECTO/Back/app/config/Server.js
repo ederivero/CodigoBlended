@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {conexion} = require('./Sequelize');
 const {ciudad_router} = require('../routes/Ciudad')
-
+const {usuario_router} = require('../routes/Usuario')
 class Server{
     constructor() {
         this.app = express();
@@ -30,7 +30,8 @@ class Server{
                 message:'La API FUNCIONA!'
             })
         });
-        this.app.use('',ciudad_router)
+        this.app.use('',ciudad_router);
+        this.app.use('',usuario_router);
     }
     iniciarServidor(){
         this.app.listen(this.puerto,()=>{

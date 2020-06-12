@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const {conexion} = require('./Sequelize');
 const {ciudad_router} = require('../routes/Ciudad')
 const {usuario_router} = require('../routes/Usuario')
+const {imagen_router} = require('../routes/Imagen')
 class Server{
     constructor() {
         this.app = express();
@@ -32,6 +33,7 @@ class Server{
         });
         this.app.use('',ciudad_router);
         this.app.use('',usuario_router);
+        this.app.use('',imagen_router);
     }
     iniciarServidor(){
         this.app.listen(this.puerto,()=>{

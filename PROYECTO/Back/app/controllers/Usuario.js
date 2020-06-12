@@ -29,7 +29,49 @@ const registrarUsuario = async(req, res) => {
 
 };
 
-const login = (req, res) => {};
+const login = async(req, res) => {
+    let {email, password, nickname} = req.body;
+    let respuesta;
+    if(email){
+        respuesta = await Usuarios.findOne({
+            where: {
+                usu_email : email
+            }
+        })
+    }
+    if(nickname){
+        respuesta = await Usuarios.findOne({
+            where: {
+                usu_nickname : nickname
+            }
+        })
+    }
+    if(!respuesta){
+        res.status(404).json({
+            ok:false,
+            mensaje: 'Usuario o contraseña incorrectos'
+        })
+    }else{
+        // let rptabooleano = respuesta.validarPassword(password);
+        // if(rptabooleano){
+
+        // }
+        if(respuesta.validarPassword(password)){
+            let token = respuesta.generarJWT();
+            res.status(200).json({
+                ok:true,
+                mensaje: 'Usuario correctamente validado',
+                token: token
+            })
+        }else{
+            res.status(404).json({
+                ok:false,
+                mensaje: 'Usuario o contraseña incorrectos'
+            })
+        }
+        
+    }
+};
 
 module.exports = {
   registrarUsuario,

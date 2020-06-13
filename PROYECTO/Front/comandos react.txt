@@ -1,0 +1,9 @@
+npm i -g create-react-app
+
+create-react-app demo
+
+cd demo
+
+npm start
+
+npm i bootstrap react-bootstrap axios

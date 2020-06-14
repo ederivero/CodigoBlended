@@ -3,7 +3,8 @@ import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-export default function Ciudades() {
+//en el caso de los componentes funcionales, se trabajan en la misma función
+export default function Ciudades(props) {
   const URL = "http://localhost:2000";
 
   const [abierto, setAbierto] = useState(false);

@@ -1,29 +1,36 @@
 import React, { Component } from "react";
+import {NavLink} from "react-router-dom";
 
 export default class Navbar extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         valor:1
-    //     }
-    //     console.log("1.constructor!")
-    // }
-
-    // componentDidMount(){
-    //     console.log("2.me estoy montando!")
-    // }
-
-    // componentDidUpdate(){
-    //     console.log("3.me actualice!")
-    // }
-
   render() {
     return (
-      <nav className="navbar navbar-light bg-light">
-          {/* {console.log("render")} */}
-        <span className="navbar-brand mb-0 h1">LandingPage</span>
-        {/* <button onClick={()=>{this.setState({valor:this.valor+1})}}>click</button>
-        {this.state.valor} */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <span className="navbar-brand mb-0 h1">Landing Page</span>
+        <div className="collapse navbar-collapse">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+
+              <NavLink className="nav-link" to="/">
+                Home
+              </NavLink>
+
+            </li>
+            <li className="nav-item">
+
+              <NavLink className="nav-link" to="/ciudades">
+                Ciudades
+              </NavLink>
+
+            </li>
+            <li className="nav-item">
+
+              <NavLink className="nav-link" to="/login">
+                Login
+              </NavLink>
+
+            </li>
+          </ul>
+        </div>
       </nav>
     );
   }
